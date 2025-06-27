@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group = 'org'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // excel
+    implementation 'org.apache.poi:poi:5.4.0'
+    implementation 'org.apache.poi:poi-ooxml:5.4.0'
+    implementation 'org.apache.poi:poi-ooxml-full:5.4.0' // `poi-ooxml` 및 모든 종속성 포함
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+    implementation 'org.reflections:reflections:0.9.12'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+}
+
+test {
+    useJUnitPlatform()
+}
